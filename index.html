@@ -7,9 +7,16 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding:16px;color:#333;}
+body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding:16px;color:#333;display:flex;justify-content:center;align-items:flex-start;}
 
-/* ── MENU ── */
+/* ── NEW LAYOUT WRAPPER (Matches style in 1.png) ── */
+.app-container {
+  width: 100%;
+  max-width: 650px; /* Limits the stretch on PC monitors */
+  margin: 0 auto;
+  padding-top: 12px;
+}
+
 .page{display:none;}
 .page.active{display:block;}
 
@@ -188,73 +195,77 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
 </head>
 <body>
 
-<!-- ══════════ MENU ══════════ -->
-<div class="page active" id="menuPage">
-  <div class="main-header">
-    <span class="castle">🏆</span>
-    <h1>Better, <span>Best!</span></h1>
-    <p>Comparative &amp; Superlative Adjectives</p>
-    <p style="font-size:0.82em;color:#ccc;margin-top:3px;">Choose a section to begin</p>
-  </div>
+<div class="app-container">
 
-  <div class="chooser-label">Choose your section</div>
-
-  <div class="cards-grid">
-    <div class="section-card card-a" onclick="startQuiz('a')">
-      <div class="card-icon">📝</div>
-      <div class="card-num">Part A</div>
-      <div class="card-title">Comparative Adjectives</div>
-      <div class="card-count">15 questions</div>
+  <!-- ══════════ MENU ══════════ -->
+  <div class="page active" id="menuPage">
+    <div class="main-header">
+      <span class="castle">🏆</span>
+      <h1>Better, <span>Best!</span></h1>
+      <p>Comparative &amp; Superlative Adjectives</p>
+      <p style="font-size:0.82em;color:#ccc;margin-top:3px;">Choose a section to begin</p>
     </div>
-    <div class="section-card card-b" onclick="startQuiz('b')">
-      <div class="card-icon">⭐</div>
-      <div class="card-num">Part B</div>
-      <div class="card-title">Superlative Adjectives</div>
-      <div class="card-count">15 questions</div>
-    </div>
-    <div class="section-card card-ch" onclick="startQuiz('ch')">
-      <div class="card-icon">🎯</div>
-      <div class="card-num">Adjective Challenge</div>
-      <div class="card-title">Comparative &amp; Superlative — Both Together!</div>
-      <div class="card-count">10 questions</div>
-    </div>
-  </div>
-</div>
 
-<!-- ══════════ QUIZ ══════════ -->
-<div class="page" id="quizPage">
-  <div class="quiz-topbar">
-    <div class="section-badge" id="sectionBadge"></div>
-    <button class="exit-btn" onclick="exitQuiz()">✕ Exit</button>
-  </div>
-  <div class="prog-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
-  <div class="prog-text">
-    <span id="progLabel">Question 1 of 15</span>
-    <span id="progPct">0%</span>
-  </div>
+    <div class="chooser-label">Choose your section</div>
 
-  <div id="qCardWrap"></div>
-
-  <div class="score-strip" id="scoreStrip">
-    <div class="score-item"><div class="val val-correct" id="stripCorrect">0</div><div class="lbl">✅ Correct</div></div>
-    <div class="score-item"><div class="val val-wrong"   id="stripWrong">0</div><div class="lbl">❌ Wrong</div></div>
-    <div class="score-item"><div class="val val-pts"     id="stripPts">0</div><div class="lbl">⭐ Points</div></div>
-  </div>
-</div>
-
-<!-- ══════════ RESULTS ══════════ -->
-<div class="page" id="resultsPage">
-  <div class="res-card" id="resCard">
-    <div class="res-emoji" id="resEmoji"></div>
-    <div class="res-title" id="resTitle"></div>
-    <div class="res-score" id="resScore"></div>
-    <div class="res-pct"   id="resPct"></div>
-    <div class="res-msg"   id="resMsg"></div>
-    <div class="res-btns">
-      <button class="rbtn rbtn-retry" onclick="retryQuiz()">🔄 Try Again</button>
-      <button class="rbtn rbtn-menu"  onclick="goMenu()">🏠 Back to Menu</button>
+    <div class="cards-grid">
+      <div class="section-card card-a" onclick="startQuiz('a')">
+        <div class="card-icon">📝</div>
+        <div class="card-num">Part A</div>
+        <div class="card-title">Comparative Adjectives</div>
+        <div class="card-count">15 questions</div>
+      </div>
+      <div class="section-card card-b" onclick="startQuiz('b')">
+        <div class="card-icon">⭐</div>
+        <div class="card-num">Part B</div>
+        <div class="card-title">Superlative Adjectives</div>
+        <div class="card-count">15 questions</div>
+      </div>
+      <div class="section-card card-ch" onclick="startQuiz('ch')">
+        <div class="card-icon">🎯</div>
+        <div class="card-num">Adjective Challenge</div>
+        <div class="card-title">Comparative &amp; Superlative — Both Together!</div>
+        <div class="card-count">10 questions</div>
+      </div>
     </div>
   </div>
+
+  <!-- ══════════ QUIZ ══════════ -->
+  <div class="page" id="quizPage">
+    <div class="quiz-topbar">
+      <div class="section-badge" id="sectionBadge"></div>
+      <button class="exit-btn" onclick="exitQuiz()">✕ Exit</button>
+    </div>
+    <div class="prog-wrap"><div class="prog-bar" id="progBar" style="width:0%"></div></div>
+    <div class="prog-text">
+      <span id="progLabel">Question 1 of 15</span>
+      <span id="progPct">0%</span>
+    </div>
+
+    <div id="qCardWrap"></div>
+
+    <div class="score-strip" id="scoreStrip">
+      <div class="score-item"><div class="val val-correct" id="stripCorrect">0</div><div class="lbl">✅ Correct</div></div>
+      <div class="score-item"><div class="val val-wrong"   id="stripWrong">0</div><div class="lbl">❌ Wrong</div></div>
+      <div class="score-item"><div class="val val-pts"     id="stripPts">0</div><div class="lbl">⭐ Points</div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ RESULTS ══════════ -->
+  <div class="page" id="resultsPage">
+    <div class="res-card" id="resCard">
+      <div class="res-emoji" id="resEmoji"></div>
+      <div class="res-title" id="resTitle"></div>
+      <div class="res-score" id="resScore"></div>
+      <div class="res-pct"   id="resPct"></div>
+      <div class="res-msg"   id="resMsg"></div>
+      <div class="res-btns">
+        <button class="rbtn rbtn-retry" onclick="retryQuiz()">🔄 Try Again</button>
+        <button class="rbtn rbtn-menu"  onclick="goMenu()">🏠 Back to Menu</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -513,7 +524,7 @@ function updateProgress(){
 function updateStrip(){
   document.getElementById('stripCorrect').textContent = numCorrect;
   document.getElementById('stripWrong').textContent   = numWrong;
-  document.getElementById('stripPts').textContent     = numCorrect*10;
+  document.getElementById('stripPts').textContent      = numCorrect*10;
 }
 
 // ═══════════════════════════════════════
