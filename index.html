@@ -8,43 +8,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding:16px;color:#333;display:flex;justify-content:center;align-items:flex-start;}
-
-/* ── NEW LAYOUT WRAPPER (Matches style in 1.png) ── */
-.app-container {
-  width: 100%;
-  max-width: 650px; /* Limits the stretch on PC monitors */
-  margin: 0 auto;
-  padding-top: 12px;
-}
-
+.app-container{width:100%;max-width:480px;margin:0 auto;padding-top:12px;}
 .page{display:none;}
 .page.active{display:block;}
-
 .main-header{text-align:center;padding:28px 16px 20px;margin-bottom:24px;}
 .main-header .castle{font-size:2.4em;display:block;margin-bottom:6px;}
 .main-header h1{font-size:1.95em;font-weight:900;color:#2d3436;line-height:1.2;}
 .main-header h1 span{color:#ff6b35;}
 .main-header p{color:#999;font-size:0.95em;font-weight:600;margin-top:6px;}
-
-.chooser-label{
-  font-size:0.72em;font-weight:900;color:#bbb;letter-spacing:1.5px;
-  text-transform:uppercase;margin-bottom:14px;
-  display:flex;align-items:center;gap:8px;
-}
+.chooser-label{font-size:0.72em;font-weight:900;color:#bbb;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
 .chooser-label::before{content:'🗂️';font-size:1.3em;}
-
 .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
-.section-card{
-  border-radius:20px;padding:26px 14px 20px;text-align:center;
-  cursor:pointer;border:2.5px solid transparent;
-  transition:transform 0.18s,box-shadow 0.18s;
-}
+.section-card{border-radius:20px;padding:26px 14px 20px;text-align:center;cursor:pointer;border:2.5px solid transparent;transition:transform 0.18s,box-shadow 0.18s;}
 .section-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12);}
 .section-card .card-icon{font-size:2em;margin-bottom:8px;}
 .section-card .card-num{font-size:0.68em;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;opacity:0.6;margin-bottom:3px;}
 .section-card .card-title{font-size:0.95em;font-weight:900;line-height:1.3;}
 .section-card .card-count{font-size:0.72em;font-weight:700;opacity:0.55;margin-top:5px;}
-
 .card-a{background:#d4f5f0;border-color:#00cec9;}
 .card-a .card-num,.card-a .card-count{color:#00897b;}
 .card-a .card-title{color:#006655;}
@@ -54,115 +34,49 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
 .card-ch{grid-column:1/-1;background:#ede7f6;border-color:#9c27b0;}
 .card-ch .card-num,.card-ch .card-count{color:#7b1fa2;}
 .card-ch .card-title{color:#4a148c;}
-
-/* ── QUIZ PAGE ── */
 .quiz-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .section-badge{font-size:0.76em;font-weight:900;padding:5px 14px;border-radius:50px;text-transform:uppercase;letter-spacing:0.5px;}
 .badge-a{background:#d4f5f0;color:#006655;}
 .badge-b{background:#fef9c3;color:#7d5a00;}
 .badge-ch{background:#ede7f6;color:#4a148c;}
-
-.exit-btn{
-  display:flex;align-items:center;gap:5px;background:#fff;
-  border:2px solid #e0e0e0;border-radius:50px;padding:6px 14px;
-  font-family:'Nunito',sans-serif;font-size:0.84em;font-weight:800;
-  color:#888;cursor:pointer;transition:all 0.2s;
-}
+.exit-btn{display:flex;align-items:center;gap:5px;background:#fff;border:2px solid #e0e0e0;border-radius:50px;padding:6px 14px;font-family:'Nunito',sans-serif;font-size:0.84em;font-weight:800;color:#888;cursor:pointer;transition:all 0.2s;}
 .exit-btn:hover{border-color:#e17055;color:#e17055;background:#fff5f3;}
-
-/* PROGRESS */
 .prog-wrap{background:#e8e8e8;border-radius:50px;height:12px;margin-bottom:6px;overflow:hidden;}
 .prog-bar{height:100%;border-radius:50px;transition:width 0.5s ease;}
 .bar-a{background:linear-gradient(90deg,#00cec9,#00897b);}
 .bar-b{background:linear-gradient(90deg,#f9ca24,#f0932b);}
 .bar-ch{background:linear-gradient(90deg,#a29bfe,#6c5ce7);}
 .prog-text{display:flex;justify-content:space-between;font-size:0.8em;font-weight:700;color:#bbb;margin-bottom:20px;}
-
-/* QUESTION CARD */
-.q-card{
-  background:#fff;border-radius:22px;padding:24px 20px 20px;
-  box-shadow:0 4px 18px rgba(0,0,0,0.08);
-  animation:slideIn 0.35s ease;
-}
+.q-card{background:#fff;border-radius:22px;padding:24px 20px 20px;box-shadow:0 4px 18px rgba(0,0,0,0.08);animation:slideIn 0.35s ease;}
 @keyframes slideIn{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
-
 .q-num-label{font-size:0.72em;font-weight:900;color:#ccc;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
 .q-text{font-size:1.07em;font-weight:800;color:#2d3436;line-height:1.55;margin-bottom:16px;}
 .q-hint-text{font-size:0.8em;color:#aaa;font-weight:600;font-style:italic;margin-bottom:12px;}
-
-/* OPTIONS */
 .options{display:flex;flex-direction:column;gap:10px;}
-.opt-btn{
-  padding:13px 16px;border-radius:14px;border:2.5px solid #e8e8e8;
-  background:#fafafa;font-family:'Nunito',sans-serif;
-  font-size:0.97em;font-weight:700;color:#444;cursor:pointer;
-  text-align:left;transition:all 0.18s;
-}
+.opt-btn{padding:13px 16px;border-radius:14px;border:2.5px solid #e8e8e8;background:#fafafa;font-family:'Nunito',sans-serif;font-size:0.97em;font-weight:700;color:#444;cursor:pointer;text-align:left;transition:all 0.18s;}
 .opt-btn:hover:not(:disabled){border-color:#ff9f43;background:#fff8f0;transform:translateX(3px);}
 .opt-btn.correct{border-color:#00b894;background:#d4fce9;color:#00664e;}
 .opt-btn.wrong{border-color:#e17055;background:#ffe0d9;color:#a33;}
 .opt-btn.reveal{border-color:#00b894;background:#d4fce9;color:#00664e;}
 .opt-btn:disabled{cursor:default;}
-
-/* FILL */
 .fill-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;line-height:2.2;margin-bottom:12px;}
 .fill-row span{font-weight:600;color:#555;font-size:0.97em;}
-.fill-input{
-  border:none;border-bottom:3px solid #ff9f43;background:transparent;
-  font-family:'Nunito',sans-serif;font-size:1em;font-weight:800;
-  color:#2d3436;width:145px;outline:none;text-align:center;
-  padding:2px 4px;transition:border-color 0.2s;
-}
+.fill-input{border:none;border-bottom:3px solid #ff9f43;background:transparent;font-family:'Nunito',sans-serif;font-size:1em;font-weight:800;color:#2d3436;width:145px;outline:none;text-align:center;padding:2px 4px;transition:border-color 0.2s;}
 .fill-input:focus{border-color:#ff6b35;}
 .fill-input.correct{border-color:#00b894;color:#00664e;}
 .fill-input.wrong{border-color:#e17055;color:#a33;}
-
-.check-btn{
-  padding:10px 24px;background:linear-gradient(135deg,#ff9f43,#ff6b35);
-  color:#fff;border:none;border-radius:50px;
-  font-family:'Nunito',sans-serif;font-size:0.93em;font-weight:800;
-  cursor:pointer;box-shadow:0 3px 10px rgba(255,107,53,0.3);
-  transition:transform 0.15s;margin-bottom:4px;
-}
+.check-btn{padding:10px 24px;background:linear-gradient(135deg,#ff9f43,#ff6b35);color:#fff;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.93em;font-weight:800;cursor:pointer;box-shadow:0 3px 10px rgba(255,107,53,0.3);transition:transform 0.15s;margin-bottom:4px;}
 .check-btn:hover:not(:disabled){transform:translateY(-2px);}
 .check-btn:disabled{background:#ccc;box-shadow:none;cursor:default;}
-
-/* ERROR */
-.err-sentence{
-  font-size:1em;font-weight:700;color:#2d3436;
-  background:#fff8f0;border-left:4px solid #ff9f43;
-  padding:12px 14px;border-radius:0 12px 12px 0;
-  margin-bottom:12px;line-height:1.6;
-}
-
-/* FEEDBACK */
-.feedback-box{
-  border-radius:14px;padding:12px 15px;margin-top:14px;
-  font-size:0.88em;font-weight:700;line-height:1.5;display:none;
-}
+.err-sentence{font-size:1em;font-weight:700;color:#2d3436;background:#fff8f0;border-left:4px solid #ff9f43;padding:12px 14px;border-radius:0 12px 12px 0;margin-bottom:12px;line-height:1.6;}
+.feedback-box{border-radius:14px;padding:12px 15px;margin-top:14px;font-size:0.88em;font-weight:700;line-height:1.5;display:none;}
 .feedback-box.show{display:block;}
 .feedback-box.correct{background:#d4fce9;color:#00664e;}
 .feedback-box.wrong{background:#ffe0d9;color:#c0392b;}
-
-/* NEXT BTN */
-.next-btn{
-  display:none;width:100%;margin-top:16px;
-  padding:14px;background:linear-gradient(135deg,#6c5ce7,#a29bfe);
-  color:#fff;border:none;border-radius:16px;
-  font-family:'Nunito',sans-serif;font-size:1em;font-weight:900;
-  cursor:pointer;box-shadow:0 4px 14px rgba(108,92,231,0.35);
-  transition:transform 0.15s;
-}
+.next-btn{display:none;width:100%;margin-top:16px;padding:14px;background:linear-gradient(135deg,#6c5ce7,#a29bfe);color:#fff;border:none;border-radius:16px;font-family:'Nunito',sans-serif;font-size:1em;font-weight:900;cursor:pointer;box-shadow:0 4px 14px rgba(108,92,231,0.35);transition:transform 0.15s;}
 .next-btn.show{display:block;}
 .next-btn:hover{transform:translateY(-2px);}
-
-/* SCORE STRIP */
-.score-strip{
-  display:flex;justify-content:center;gap:20px;
-  margin-top:18px;padding:12px 0;
-  background:#fff;border-radius:16px;
-  box-shadow:0 2px 10px rgba(0,0,0,0.06);
-}
+.score-strip{display:flex;justify-content:center;gap:20px;margin-top:18px;padding:12px 0;background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,0.06);}
 .score-item{text-align:center;}
 .score-item .val{font-size:1.5em;font-weight:900;}
 .score-item .lbl{font-size:0.7em;font-weight:800;color:#aaa;text-transform:uppercase;letter-spacing:0.5px;}
@@ -170,34 +84,67 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
 .val-wrong{color:#e17055;}
 .val-pts{color:#6c5ce7;}
 
-/* ── RESULTS ── */
-.results-page{display:none;}
-.results-page.active{display:block;}
-.res-card{
-  border-radius:26px;padding:36px 24px;text-align:center;
-  color:#fff;margin-bottom:24px;
-  box-shadow:0 8px 28px rgba(0,0,0,0.18);
-}
+/* ── RESULTS PAGE ── */
+#resultsPage { padding-bottom: 30px; }
+
+/* celebration card */
+.res-card{border-radius:26px;padding:30px 22px 24px;text-align:center;margin-bottom:20px;box-shadow:0 8px 28px rgba(0,0,0,0.18);}
 .res-a{background:linear-gradient(135deg,#00cec9,#00897b);}
 .res-b{background:linear-gradient(135deg,#f9ca24,#f0932b);}
 .res-ch{background:linear-gradient(135deg,#6c5ce7,#a29bfe);}
-.res-emoji{font-size:3.6em;margin-bottom:10px;}
-.res-title{font-size:1.7em;font-weight:900;margin-bottom:6px;}
-.res-score{font-size:3em;font-weight:900;margin:12px 0 6px;}
-.res-pct{font-size:1em;font-weight:700;opacity:0.85;margin-bottom:10px;}
-.res-msg{font-size:0.97em;font-weight:600;opacity:0.92;margin-bottom:22px;}
+
+/* stars */
+.stars-row{display:flex;justify-content:center;gap:6px;margin-bottom:14px;min-height:40px;}
+.star{font-size:1.9rem;opacity:0;transform:scale(0.3) rotate(-30deg);transition:opacity 0.35s ease,transform 0.35s ease;}
+.star.pop{opacity:1;transform:scale(1) rotate(0deg);}
+
+.res-emoji{font-size:3.2em;margin-bottom:8px;display:block;}
+.res-title{font-size:1.6em;font-weight:900;color:#fff;margin-bottom:4px;}
+.res-subtitle{font-size:0.92em;font-weight:600;color:rgba(255,255,255,0.88);margin-bottom:18px;}
+
+/* score pills */
+.score-pills{display:flex;justify-content:center;gap:10px;margin-bottom:22px;flex-wrap:wrap;}
+.pill{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.22);border-radius:12px;padding:9px 14px;min-width:64px;}
+.pill .pv{font-size:1.3rem;font-weight:900;color:#fff;}
+.pill .pl{font-size:0.62rem;font-weight:800;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;}
+
+/* end buttons inside card */
 .res-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.rbtn{padding:13px 28px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.95em;font-weight:900;cursor:pointer;transition:transform 0.15s;}
+.rbtn{padding:12px 26px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-size:0.94em;font-weight:900;cursor:pointer;transition:transform 0.15s;}
 .rbtn:hover{transform:translateY(-2px);}
 .rbtn-retry{background:#fff;color:#6c5ce7;}
 .rbtn-menu{background:rgba(255,255,255,0.22);color:#fff;border:2px solid rgba(255,255,255,0.6);}
+
+/* review box */
+.review-box{background:#f9fafb;border:1px solid #d1d5db;border-radius:14px;padding:18px 18px 16px;text-align:left;margin-top:4px;}
+.review-badge{display:inline-block;background:#1f2937;color:white;font-size:0.65rem;font-weight:800;padding:3px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:10px;}
+.review-heading{font-size:1rem;font-weight:800;color:#111;margin-bottom:8px;}
+.review-body{font-size:0.82rem;color:#4b5563;line-height:1.55;margin-bottom:14px;}
+.review-btn{display:block;background:#1f2937;color:white;text-decoration:none;font-size:0.88rem;font-weight:700;padding:11px 20px;border-radius:9px;text-align:center;transition:background 0.2s;}
+.review-btn:hover{background:#374151;}
+
+/* low score card */
+.low-score-card{background:#fff8f0;border:2px solid #ffd09b;border-radius:20px;padding:28px 20px;text-align:center;margin-bottom:20px;}
+.low-score-card .ls-emoji{font-size:3rem;display:block;margin-bottom:10px;}
+.low-score-card h2{font-size:1.3rem;font-weight:900;color:#e67e22;margin-bottom:8px;}
+.low-score-card p{font-size:0.9rem;color:#a04000;line-height:1.5;margin-bottom:20px;}
+.low-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.low-btns .rbtn-retry{background:linear-gradient(135deg,#ff9f43,#ff6b35);color:#fff;border:none;}
+.low-btns .rbtn-menu{background:#fff;color:#888;border:2px solid #ddd;}
+
+/* low score pills */
+.low-pills{display:flex;justify-content:center;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+.low-pill{display:flex;flex-direction:column;align-items:center;background:#fff;border-radius:12px;padding:9px 14px;min-width:64px;border:1px solid #e5e7eb;}
+.low-pill .pv{font-size:1.3rem;font-weight:900;}
+.low-pill .pl{font-size:0.62rem;font-weight:800;color:#aaa;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;}
+
+@media(max-width:480px){.app-container{padding-top:0;}.cards-grid{grid-template-columns:1fr;}.card-ch{grid-column:auto;}}
 </style>
 </head>
 <body>
-
 <div class="app-container">
 
-  <!-- ══════════ MENU ══════════ -->
+  <!-- MENU -->
   <div class="page active" id="menuPage">
     <div class="main-header">
       <span class="castle">🏆</span>
@@ -205,9 +152,7 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
       <p>Comparative &amp; Superlative Adjectives</p>
       <p style="font-size:0.82em;color:#ccc;margin-top:3px;">Choose a section to begin</p>
     </div>
-
     <div class="chooser-label">Choose your section</div>
-
     <div class="cards-grid">
       <div class="section-card card-a" onclick="startQuiz('a')">
         <div class="card-icon">📝</div>
@@ -230,7 +175,7 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
     </div>
   </div>
 
-  <!-- ══════════ QUIZ ══════════ -->
+  <!-- QUIZ -->
   <div class="page" id="quizPage">
     <div class="quiz-topbar">
       <div class="section-badge" id="sectionBadge"></div>
@@ -241,9 +186,7 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
       <span id="progLabel">Question 1 of 15</span>
       <span id="progPct">0%</span>
     </div>
-
     <div id="qCardWrap"></div>
-
     <div class="score-strip" id="scoreStrip">
       <div class="score-item"><div class="val val-correct" id="stripCorrect">0</div><div class="lbl">✅ Correct</div></div>
       <div class="score-item"><div class="val val-wrong"   id="stripWrong">0</div><div class="lbl">❌ Wrong</div></div>
@@ -251,216 +194,69 @@ body{font-family:'Nunito',sans-serif;background:#fff8f0;min-height:100vh;padding
     </div>
   </div>
 
-  <!-- ══════════ RESULTS ══════════ -->
-  <div class="page" id="resultsPage">
-    <div class="res-card" id="resCard">
-      <div class="res-emoji" id="resEmoji"></div>
-      <div class="res-title" id="resTitle"></div>
-      <div class="res-score" id="resScore"></div>
-      <div class="res-pct"   id="resPct"></div>
-      <div class="res-msg"   id="resMsg"></div>
-      <div class="res-btns">
-        <button class="rbtn rbtn-retry" onclick="retryQuiz()">🔄 Try Again</button>
-        <button class="rbtn rbtn-menu"  onclick="goMenu()">🏠 Back to Menu</button>
-      </div>
-    </div>
-  </div>
+  <!-- RESULTS -->
+  <div class="page" id="resultsPage"></div>
 
 </div>
 
 <script>
-// ═══════════════════════════════════════
-//  QUESTION BANKS
-// ═══════════════════════════════════════
 const banks = {
 a:[
-  {type:"mc",q:"What is a comparative adjective used for?",
-   opts:["To describe one thing on its own","To compare two things","To compare three or more things","To name a noun"],
-   ans:1,fb:"A comparative adjective compares TWO things — two people, animals, places or objects."},
-
-  {type:"mc",q:"Which word do we almost always use AFTER a comparative adjective?",
-   opts:["the","then","than","that"],
-   ans:2,fb:"We almost always use THAN after a comparative adjective. Example: The giraffe is taller THAN the zebra."},
-
-  {type:"mc",q:"Which is the correct comparative form of TALL?",
-   opts:["more tall","tallest","taller","talles"],
-   ans:2,fb:"TALL → TALLER. For most short adjectives, simply add -er to the end."},
-
-  {type:"fill",q:"The river is ________ than the lake. (cold)",
-   blank:"colder",fb:"COLD → COLDER. Just add -er to the end. 'The river is colder than the lake.'"},
-
-  {type:"mc",q:"Adjective ends in -e. What do you do to make the comparative?",
-   opts:["Add -er (niceer)","Just add -r (nicer)","Double the last letter + -er","Change -e to -i + -er"],
-   ans:1,fb:"Rule 1: Ends in -e → just add -r. nice → nicer, wide → wider, brave → braver."},
-
-  {type:"fill",q:"She is ________ than her brother. (brave)",
-   blank:"braver",fb:"Rule 1: BRAVE ends in -e → just add -r. BRAVE → BRAVER."},
-
-  {type:"mc",q:"Which is the correct comparative form of BIG?",
-   opts:["biger","bigger","more big","bigest"],
-   ans:1,fb:"Rule 2: Short vowel + one consonant → double the consonant + -er. BIG → BIGGER (not biger!)."},
-
-  {type:"fill",q:"Today is ________ than yesterday. (hot)",
-   blank:"hotter",fb:"Rule 2: HOT has a short vowel + one consonant → double the t + -er. HOT → HOTTER."},
-
-  {type:"mc",q:"Which is the correct comparative form of HAPPY?",
-   opts:["happyer","more happy","happier","happiest"],
-   ans:2,fb:"Rule 3: Ends in -y → change y to i + -er. HAPPY → HAPPIER (not happyer!)."},
-
-  {type:"fill",q:"My cat is ________ than my dog. (lazy)",
-   blank:"lazier",fb:"Rule 3: LAZY ends in -y → change y to i + -er. LAZY → LAZIER."},
-
-  {type:"mc",q:"The comparative of GOOD is:",
-   opts:["gooder","more good","goodest","better"],
-   ans:3,fb:"GOOD is irregular — it changes completely! good → BETTER. Never write 'gooder' or 'more good'!"},
-
-  {type:"mc",q:"The comparative of BAD is:",
-   opts:["badder","more bad","worse","bader"],
-   ans:2,fb:"BAD is irregular! bad → WORSE. It changes completely — no spelling rule applies."},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"Nora is gooder at swimming than Leo.",
-   opts:["gooder → better","than → then","at → in","swimming → swim"],
-   ans:0,fb:"GOODER is not a real word! GOOD is irregular: good → BETTER. 'Nora is better at swimming than Leo.'"},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"This scarf is softer then that one.",
-   opts:["softer → more soft","then → than","scarf → scarfs","is → are"],
-   ans:1,fb:"THEN is for time. THAN is for comparisons. 'This scarf is softer THAN that one.'"},
-
-  {type:"mc",q:"Complete: The Amazon River is ________ than the Thames. (long)",
-   opts:["longer","longest","more long","longier"],
-   ans:0,fb:"LONG → LONGER. Just add -er. 'The Amazon River is longer than the Thames.'"},
+  {type:"mc",q:"What is a comparative adjective used for?",opts:["To describe one thing on its own","To compare two things","To compare three or more things","To name a noun"],ans:1,fb:"A comparative adjective compares TWO things — two people, animals, places or objects."},
+  {type:"mc",q:"Which word do we almost always use AFTER a comparative adjective?",opts:["the","then","than","that"],ans:2,fb:"We almost always use THAN after a comparative adjective. Example: The giraffe is taller THAN the zebra."},
+  {type:"mc",q:"Which is the correct comparative form of TALL?",opts:["more tall","tallest","taller","talles"],ans:2,fb:"TALL → TALLER. For most short adjectives, simply add -er to the end."},
+  {type:"fill",q:"The river is ________ than the lake. (cold)",blank:"colder",fb:"COLD → COLDER. Just add -er to the end. 'The river is colder than the lake.'"},
+  {type:"mc",q:"Adjective ends in -e. What do you do to make the comparative?",opts:["Add -er (niceer)","Just add -r (nicer)","Double the last letter + -er","Change -e to -i + -er"],ans:1,fb:"Rule 1: Ends in -e → just add -r. nice → nicer, wide → wider, brave → braver."},
+  {type:"fill",q:"She is ________ than her brother. (brave)",blank:"braver",fb:"Rule 1: BRAVE ends in -e → just add -r. BRAVE → BRAVER."},
+  {type:"mc",q:"Which is the correct comparative form of BIG?",opts:["biger","bigger","more big","bigest"],ans:1,fb:"Rule 2: Short vowel + one consonant → double the consonant + -er. BIG → BIGGER (not biger!)."},
+  {type:"fill",q:"Today is ________ than yesterday. (hot)",blank:"hotter",fb:"Rule 2: HOT has a short vowel + one consonant → double the t + -er. HOT → HOTTER."},
+  {type:"mc",q:"Which is the correct comparative form of HAPPY?",opts:["happyer","more happy","happier","happiest"],ans:2,fb:"Rule 3: Ends in -y → change y to i + -er. HAPPY → HAPPIER (not happyer!)."},
+  {type:"fill",q:"My cat is ________ than my dog. (lazy)",blank:"lazier",fb:"Rule 3: LAZY ends in -y → change y to i + -er. LAZY → LAZIER."},
+  {type:"mc",q:"The comparative of GOOD is:",opts:["gooder","more good","goodest","better"],ans:3,fb:"GOOD is irregular — it changes completely! good → BETTER. Never write 'gooder' or 'more good'!"},
+  {type:"mc",q:"The comparative of BAD is:",opts:["badder","more bad","worse","bader"],ans:2,fb:"BAD is irregular! bad → WORSE. It changes completely — no spelling rule applies."},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"Nora is gooder at swimming than Leo.",opts:["gooder → better","than → then","at → in","swimming → swim"],ans:0,fb:"GOODER is not a real word! GOOD is irregular: good → BETTER. 'Nora is better at swimming than Leo.'"},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"This scarf is softer then that one.",opts:["softer → more soft","then → than","scarf → scarfs","is → are"],ans:1,fb:"THEN is for time. THAN is for comparisons. 'This scarf is softer THAN that one.'"},
+  {type:"mc",q:"Complete: The Amazon River is ________ than the Thames. (long)",opts:["longer","longest","more long","longier"],ans:0,fb:"LONG → LONGER. Just add -er. 'The Amazon River is longer than the Thames.'"}
 ],
-
 b:[
-  {type:"mc",q:"What is a superlative adjective used for?",
-   opts:["To compare two things","To describe one thing on its own","To compare three or more things","To ask a question"],
-   ans:2,fb:"A superlative adjective compares THREE OR MORE things. It tells us which has the MOST of a quality."},
-
-  {type:"mc",q:"Which word do we almost always use BEFORE a superlative adjective?",
-   opts:["a","an","than","the"],
-   ans:3,fb:"We almost always use THE before a superlative adjective. Example: She is THE fastest runner."},
-
-  {type:"mc",q:"Which is the correct superlative form of TALL?",
-   opts:["taller","most tall","the tallest","tallier"],
-   ans:2,fb:"TALL → THE TALLEST. Add -est and always use THE before it."},
-
-  {type:"fill",q:"The Sahara is ________ desert in the world. (hot)",
-   blank:"the hottest",fb:"Rule 2: HOT → double the t + -est = HOTTEST. Don't forget THE! → THE HOTTEST."},
-
-  {type:"mc",q:"Which is the correct superlative form of NICE?",
-   opts:["nicest","the nicest","the niceer","most nice"],
-   ans:1,fb:"Rule 1: NICE ends in -e → just add -st. NICE → THE NICEST. Always include THE!"},
-
-  {type:"fill",q:"He was ________ knight in the kingdom. (brave)",
-   blank:"the bravest",fb:"Rule 1: BRAVE ends in -e → just add -st. BRAVE → BRAVEST. Don't forget THE!"},
-
-  {type:"mc",q:"Which is the correct superlative form of FUNNY?",
-   opts:["the funnyest","the funniest","most funny","the funnier"],
-   ans:1,fb:"Rule 3: FUNNY ends in -y → change y to i + -est. FUNNY → THE FUNNIEST."},
-
-  {type:"fill",q:"The blue whale is ________ animal on Earth. (big)",
-   blank:"the biggest",fb:"Rule 2: BIG → double the g + -est = BIGGEST. 'The blue whale is THE BIGGEST animal on Earth.'"},
-
-  {type:"mc",q:"The superlative of GOOD is:",
-   opts:["the goodest","the most good","the best","the better"],
-   ans:2,fb:"GOOD is irregular! good → better → THE BEST. It changes completely!"},
-
-  {type:"mc",q:"The superlative of BAD is:",
-   opts:["the baddest","the most bad","the worse","the worst"],
-   ans:3,fb:"BAD is irregular! bad → worse → THE WORST. Never write 'baddest' or 'most bad'!"},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"The blue whale is most biggest animal on Earth.",
-   opts:["most biggest → the biggest","blue → big","animal → animals","Earth → earth"],
-   ans:0,fb:"Never use MOST with -est. The correct superlative is THE BIGGEST."},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"She is the happyest girl in the class.",
-   opts:["the → a","happyest → happiest","girl → girls","in → of"],
-   ans:1,fb:"Rule 3: HAPPY ends in -y → change y to i first, then add -est. → THE HAPPIEST."},
-
-  {type:"fill",q:"January is ________ month of the year. (cold)",
-   blank:"the coldest",fb:"COLD → COLDEST. Just add -est. Don't forget THE! → THE COLDEST."},
-
-  {type:"mc",q:"Complete: My grandpa is ________ person in our family. (old)",
-   opts:["older","the oldest","most old","the older"],
-   ans:1,fb:"3+ people → superlative. OLD → THE OLDEST. 'My grandpa is the oldest person in our family.'"},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"That thunderstorm was baddest of the whole year.",
-   opts:["baddest → the worst","thunderstorm → thunder","whole → all","was → is"],
-   ans:0,fb:"BAD is irregular — the superlative is THE WORST, not 'baddest'. Always use THE before a superlative!"},
+  {type:"mc",q:"What is a superlative adjective used for?",opts:["To compare two things","To describe one thing on its own","To compare three or more things","To ask a question"],ans:2,fb:"A superlative adjective compares THREE OR MORE things. It tells us which has the MOST of a quality."},
+  {type:"mc",q:"Which word do we almost always use BEFORE a superlative adjective?",opts:["a","an","than","the"],ans:3,fb:"We almost always use THE before a superlative adjective. Example: She is THE fastest runner."},
+  {type:"mc",q:"Which is the correct superlative form of TALL?",opts:["taller","most tall","the tallest","tallier"],ans:2,fb:"TALL → THE TALLEST. Add -est and always use THE before it."},
+  {type:"fill",q:"The Sahara is ________ desert in the world. (hot)",blank:"the hottest",fb:"Rule 2: HOT → double the t + -est = HOTTEST. Don't forget THE! → THE HOTTEST."},
+  {type:"mc",q:"Which is the correct superlative form of NICE?",opts:["nicest","the nicest","the niceer","most nice"],ans:1,fb:"Rule 1: NICE ends in -e → just add -st. NICE → THE NICEST. Always include THE!"},
+  {type:"fill",q:"He was ________ knight in the kingdom. (brave)",blank:"the bravest",fb:"Rule 1: BRAVE ends in -e → just add -st. BRAVE → BRAVEST. Don't forget THE!"},
+  {type:"mc",q:"Which is the correct superlative form of FUNNY?",opts:["the funnyest","the funniest","most funny","the funnier"],ans:1,fb:"Rule 3: FUNNY ends in -y → change y to i + -est. FUNNY → THE FUNNIEST."},
+  {type:"fill",q:"The blue whale is ________ animal on Earth. (big)",blank:"the biggest",fb:"Rule 2: BIG → double the g + -est = BIGGEST. 'The blue whale is THE BIGGEST animal on Earth.'"},
+  {type:"mc",q:"The superlative of GOOD is:",opts:["the goodest","the most good","the best","the better"],ans:2,fb:"GOOD is irregular! good → better → THE BEST. It changes completely!"},
+  {type:"mc",q:"The superlative of BAD is:",opts:["the baddest","the most bad","the worse","the worst"],ans:3,fb:"BAD is irregular! bad → worse → THE WORST. Never write 'baddest' or 'most bad'!"},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"The blue whale is most biggest animal on Earth.",opts:["most biggest → the biggest","blue → big","animal → animals","Earth → earth"],ans:0,fb:"Never use MOST with -est. The correct superlative is THE BIGGEST."},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"She is the happyest girl in the class.",opts:["the → a","happyest → happiest","girl → girls","in → of"],ans:1,fb:"Rule 3: HAPPY ends in -y → change y to i first, then add -est. → THE HAPPIEST."},
+  {type:"fill",q:"January is ________ month of the year. (cold)",blank:"the coldest",fb:"COLD → COLDEST. Just add -est. Don't forget THE! → THE COLDEST."},
+  {type:"mc",q:"Complete: My grandpa is ________ person in our family. (old)",opts:["older","the oldest","most old","the older"],ans:1,fb:"3+ people → superlative. OLD → THE OLDEST. 'My grandpa is the oldest person in our family.'"},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"That thunderstorm was baddest of the whole year.",opts:["baddest → the worst","thunderstorm → thunder","whole → all","was → is"],ans:0,fb:"BAD is irregular — the superlative is THE WORST, not 'baddest'. Always use THE before a superlative!"}
 ],
-
 ch:[
-  {type:"mc",q:"This is ________ film I have ever seen! (good) — 3+ things",
-   opts:["gooder","better","the best","the goodest"],
-   ans:2,fb:"3+ things = superlative. GOOD → THE BEST. 'This is the best film I have ever seen!'"},
-
-  {type:"mc",q:"My bag is ________ than yours. (heavy) — 2 things",
-   opts:["heaviest","the heaviest","heavier","more heavy"],
-   ans:2,fb:"2 things = comparative. HEAVY → change y to i + -er = HEAVIER."},
-
-  {type:"mc",q:"Leo is ________ of all three brothers. (tall) — 3 things",
-   opts:["taller","tallest","the tallest","more tall"],
-   ans:2,fb:"3 things = superlative. TALL → THE TALLEST. Don't forget THE!"},
-
-  {type:"mc",q:"That was ________ storm of the whole year. (bad) — 3+ things",
-   opts:["worse","badder","the worst","most bad"],
-   ans:2,fb:"3+ things = superlative. BAD is irregular → THE WORST."},
-
-  {type:"mc",q:"A rabbit is ________ than a tortoise. (fast) — 2 things",
-   opts:["fastest","the fastest","faster","most fast"],
-   ans:2,fb:"2 things = comparative. FAST → FASTER. 'A rabbit is faster than a tortoise.'"},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"The Pacific is most deep ocean in the world.",
-   opts:["most deep → the deepest","Pacific → pacific","ocean → oceans","world → worlds"],
-   ans:0,fb:"Never use MOST with short adjectives. The correct superlative is THE DEEPEST."},
-
-  {type:"error",q:"Find the mistake in this sentence:",
-   sent:"She is the most tall girl in the class.",
-   opts:["most tall → the tallest","class → classes","girl → girls","She → Her"],
-   ans:0,fb:"Don't use MOST with short adjectives. The correct form is THE TALLEST."},
-
-  {type:"fill",q:"Today is ________ than yesterday. (cold) — 2 things → comparative",
-   blank:"colder",fb:"2 things = comparative. COLD → COLDER. 'Today is colder than yesterday.'"},
-
-  {type:"fill",q:"The cheetah is ________ land animal on Earth. (fast) — 3+ things → superlative",
-   blank:"the fastest",fb:"3+ things = superlative. FAST → THE FASTEST. 'The cheetah is the fastest land animal on Earth.'"},
-
-  {type:"mc",q:"Grandma's cooking is ________ than any restaurant! (good) — 2 things",
-   opts:["good","better","the best","the better"],
-   ans:1,fb:"2 things = comparative. GOOD is irregular → BETTER. 'Grandma's cooking is better than any restaurant!'"},
+  {type:"mc",q:"This is ________ film I have ever seen! (good) — 3+ things",opts:["gooder","better","the best","the goodest"],ans:2,fb:"3+ things = superlative. GOOD → THE BEST. 'This is the best film I have ever seen!'"},
+  {type:"mc",q:"My bag is ________ than yours. (heavy) — 2 things",opts:["heaviest","the heaviest","heavier","more heavy"],ans:2,fb:"2 things = comparative. HEAVY → change y to i + -er = HEAVIER."},
+  {type:"mc",q:"Leo is ________ of all three brothers. (tall) — 3 things",opts:["taller","tallest","the tallest","more tall"],ans:2,fb:"3 things = superlative. TALL → THE TALLEST. Don't forget THE!"},
+  {type:"mc",q:"That was ________ storm of the whole year. (bad) — 3+ things",opts:["worse","badder","the worst","most bad"],ans:2,fb:"3+ things = superlative. BAD is irregular → THE WORST."},
+  {type:"mc",q:"A rabbit is ________ than a tortoise. (fast) — 2 things",opts:["fastest","the fastest","faster","most fast"],ans:2,fb:"2 things = comparative. FAST → FASTER. 'A rabbit is faster than a tortoise.'"},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"The Pacific is most deep ocean in the world.",opts:["most deep → the deepest","Pacific → pacific","ocean → oceans","world → worlds"],ans:0,fb:"Never use MOST with short adjectives. The correct superlative is THE DEEPEST."},
+  {type:"error",q:"Find the mistake in this sentence:",sent:"She is the most tall girl in the class.",opts:["most tall → the tallest","class → classes","girl → girls","She → Her"],ans:0,fb:"Don't use MOST with short adjectives. The correct form is THE TALLEST."},
+  {type:"fill",q:"Today is ________ than yesterday. (cold) — 2 things → comparative",blank:"colder",fb:"2 things = comparative. COLD → COLDER. 'Today is colder than yesterday.'"},
+  {type:"fill",q:"The cheetah is ________ land animal on Earth. (fast) — 3+ things → superlative",blank:"the fastest",fb:"3+ things = superlative. FAST → THE FASTEST. 'The cheetah is the fastest land animal on Earth.'"},
+  {type:"mc",q:"Grandma's cooking is ________ than any restaurant! (good) — 2 things",opts:["good","better","the best","the better"],ans:1,fb:"2 things = comparative. GOOD is irregular → BETTER."}
 ]
 };
 
-// ═══════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════
-let curSection = null;
-let curQs      = [];
-let curIdx     = 0;
-let numCorrect = 0;
-let numWrong   = 0;
-let answered   = false;
+let curSection=null,curQs=[],curIdx=0,numCorrect=0,numWrong=0,answered=false;
 
-// ═══════════════════════════════════════
-//  PAGE HELPERS
-// ═══════════════════════════════════════
 function showPage(id){
-  ['menuPage','quizPage','resultsPage'].forEach(p=>{
-    document.getElementById(p).classList.remove('active');
-  });
+  ['menuPage','quizPage','resultsPage'].forEach(p=>document.getElementById(p).classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// ═══════════════════════════════════════
-//  START / EXIT / RETRY
-// ═══════════════════════════════════════
 function shuffle(arr){
   for(let i=arr.length-1;i>0;i--){
     const j=Math.floor(Math.random()*(i+1));
@@ -470,210 +266,175 @@ function shuffle(arr){
 }
 
 function startQuiz(sec){
-  curSection = sec;
-  curQs      = shuffle([...banks[sec]]);
-  curIdx     = 0;
-  numCorrect = 0;
-  numWrong   = 0;
-  answered   = false;
-
-  const badge = document.getElementById('sectionBadge');
-  const bar   = document.getElementById('progBar');
-  if(sec==='a'){
-    badge.textContent='📝 Part A – Comparative';
-    badge.className='section-badge badge-a';
-    bar.className='prog-bar bar-a';
-  } else if(sec==='b'){
-    badge.textContent='⭐ Part B – Superlative';
-    badge.className='section-badge badge-b';
-    bar.className='prog-bar bar-b';
-  } else {
-    badge.textContent='🎯 Adjective Challenge';
-    badge.className='section-badge badge-ch';
-    bar.className='prog-bar bar-ch';
-  }
-
-  updateStrip();
-  showPage('quizPage');
-  renderQuestion();
+  curSection=sec; curQs=shuffle([...banks[sec]]);
+  curIdx=0; numCorrect=0; numWrong=0; answered=false;
+  const badge=document.getElementById('sectionBadge');
+  const bar=document.getElementById('progBar');
+  if(sec==='a'){badge.textContent='📝 Part A – Comparative';badge.className='section-badge badge-a';bar.className='prog-bar bar-a';}
+  else if(sec==='b'){badge.textContent='⭐ Part B – Superlative';badge.className='section-badge badge-b';bar.className='prog-bar bar-b';}
+  else{badge.textContent='🎯 Adjective Challenge';badge.className='section-badge badge-ch';bar.className='prog-bar bar-ch';}
+  updateStrip(); showPage('quizPage'); renderQuestion();
 }
 
 function exitQuiz(){
-  if(curIdx > 0){
-    if(!confirm('Exit quiz? Your progress will be lost.')) return;
-  }
+  if(curIdx>0){if(!confirm('Exit quiz? Your progress will be lost.')) return;}
   goMenu();
 }
-
 function goMenu(){showPage('menuPage');}
-
 function retryQuiz(){startQuiz(curSection);}
 
-// ═══════════════════════════════════════
-//  PROGRESS
-// ═══════════════════════════════════════
 function updateProgress(){
-  const done = curIdx;
-  const total= curQs.length;
-  const pct  = Math.round((done/total)*100);
-  document.getElementById('progBar').style.width = pct+'%';
-  document.getElementById('progLabel').textContent= 'Question '+(done+1)+' of '+total;
-  document.getElementById('progPct').textContent  = pct+'%';
+  const done=curIdx,total=curQs.length,pct=Math.round((done/total)*100);
+  document.getElementById('progBar').style.width=pct+'%';
+  document.getElementById('progLabel').textContent='Question '+(done+1)+' of '+total;
+  document.getElementById('progPct').textContent=pct+'%';
 }
-
 function updateStrip(){
-  document.getElementById('stripCorrect').textContent = numCorrect;
-  document.getElementById('stripWrong').textContent   = numWrong;
-  document.getElementById('stripPts').textContent      = numCorrect*10;
+  document.getElementById('stripCorrect').textContent=numCorrect;
+  document.getElementById('stripWrong').textContent=numWrong;
+  document.getElementById('stripPts').textContent=numCorrect*10;
 }
 
-// ═══════════════════════════════════════
-//  RENDER QUESTION
-// ═══════════════════════════════════════
 function renderQuestion(){
-  answered = false;
-  updateProgress();
-  const q   = curQs[curIdx];
-  const wrap = document.getElementById('qCardWrap');
-
-  let html = `<div class="q-card">
-    <div class="q-num-label">Question ${curIdx+1} of ${curQs.length}</div>
-    <div class="q-text">${q.q}</div>`;
-
+  answered=false; updateProgress();
+  const q=curQs[curIdx];
+  const wrap=document.getElementById('qCardWrap');
+  let html='<div class="q-card"><div class="q-num-label">Question '+(curIdx+1)+' of '+curQs.length+'</div><div class="q-text">'+q.q+'</div>';
   if(q.type==='mc'){
-    html+=`<div class="options">`;
-    q.opts.forEach((o,i)=>{
-      html+=`<button class="opt-btn" id="opt${i}" onclick="pickMC(${i})">${o}</button>`;
-    });
-    html+=`</div>`;
+    html+='<div class="options">';
+    q.opts.forEach((o,i)=>{html+='<button class="opt-btn" id="opt'+i+'" onclick="pickMC('+i+')">'+o+'</button>';});
+    html+='</div>';
   }
-
   if(q.type==='fill'){
-    const parts = q.q.split('________');
-    html+=`<div class="fill-row">`;
+    const parts=q.q.split('________');
+    html+='<div class="fill-row">';
     parts.forEach((p,i)=>{
-      html+=`<span>${p}</span>`;
-      if(i<parts.length-1){
-        html+=`<input class="fill-input" id="fillInput" type="text" placeholder="type here"
-          autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
-          onkeydown="if(event.key==='Enter')checkFill()">`;
-      }
+      html+='<span>'+p+'</span>';
+      if(i<parts.length-1) html+='<input class="fill-input" id="fillInput" type="text" placeholder="type here" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key===\'Enter\')checkFill()">';
     });
-    html+=`</div>`;
-    html+=`<button class="check-btn" id="checkBtn" onclick="checkFill()">✅ Check</button>`;
+    html+='</div><button class="check-btn" id="checkBtn" onclick="checkFill()">✅ Check</button>';
   }
-
   if(q.type==='error'){
-    html+=`<div class="err-sentence">🔍 "${q.sent}"</div>`;
-    html+=`<div class="q-hint-text">Which option shows the correct fix?</div>`;
-    html+=`<div class="options">`;
-    q.opts.forEach((o,i)=>{
-      html+=`<button class="opt-btn" id="opt${i}" onclick="pickMC(${i})">${o}</button>`;
-    });
-    html+=`</div>`;
+    html+='<div class="err-sentence">🔍 "'+q.sent+'"</div><div class="q-hint-text">Which option shows the correct fix?</div><div class="options">';
+    q.opts.forEach((o,i)=>{html+='<button class="opt-btn" id="opt'+i+'" onclick="pickMC('+i+')">'+o+'</button>';});
+    html+='</div>';
   }
-
-  html+=`<div class="feedback-box" id="feedbackBox"></div>`;
-  html+=`<button class="next-btn" id="nextBtn" onclick="nextQuestion()">${curIdx===curQs.length-1?'🏁 See My Results!':'Next Question →'}</button>`;
-  html+=`</div>`;
-
-  wrap.innerHTML = html;
-
-  // focus fill input
-  if(q.type==='fill'){
-    setTimeout(()=>{
-      const el=document.getElementById('fillInput');
-      if(el) el.focus();
-    },400);
-  }
+  html+='<div class="feedback-box" id="feedbackBox"></div>';
+  html+='<button class="next-btn" id="nextBtn" onclick="nextQuestion()">'+(curIdx===curQs.length-1?'🏁 See My Results!':'Next Question →')+'</button></div>';
+  wrap.innerHTML=html;
+  if(q.type==='fill') setTimeout(()=>{const el=document.getElementById('fillInput');if(el)el.focus();},400);
 }
 
-// ═══════════════════════════════════════
-//  ANSWER HANDLERS
-// ═══════════════════════════════════════
 function pickMC(i){
-  if(answered) return;
-  answered = true;
-  const q   = curQs[curIdx];
-  const ok  = (i===q.ans);
-
+  if(answered) return; answered=true;
+  const q=curQs[curIdx],ok=(i===q.ans);
   q.opts.forEach((_,idx)=>{
     const btn=document.getElementById('opt'+idx);
     btn.disabled=true;
     if(idx===q.ans) btn.classList.add('correct');
-    else if(idx===i && !ok) btn.classList.add('wrong');
+    else if(idx===i&&!ok) btn.classList.add('wrong');
   });
-
-  showFeedback(ok, ok ? q.fb : 'The correct answer is: '+q.opts[q.ans]+'. '+q.fb);
+  showFeedback(ok,ok?q.fb:'The correct answer is: '+q.opts[q.ans]+'. '+q.fb);
   recordAnswer(ok);
 }
 
 function checkFill(){
   if(answered) return;
-  const q   = curQs[curIdx];
-  const inp = document.getElementById('fillInput');
+  const q=curQs[curIdx],inp=document.getElementById('fillInput');
   if(!inp) return;
-  const val = inp.value.trim().toLowerCase();
-  const ok  = (val === q.blank.toLowerCase());
-  answered  = true;
-
-  inp.disabled = true;
-  inp.classList.add(ok ? 'correct' : 'wrong');
-  if(!ok) inp.value = q.blank;
-
-  const cb = document.getElementById('checkBtn');
-  if(cb) cb.disabled = true;
-
-  showFeedback(ok, ok ? q.fb : 'Answer: '+q.blank+'. '+q.fb);
+  const val=inp.value.trim().toLowerCase(),ok=(val===q.blank.toLowerCase());
+  answered=true; inp.disabled=true; inp.classList.add(ok?'correct':'wrong');
+  if(!ok) inp.value=q.blank;
+  const cb=document.getElementById('checkBtn');
+  if(cb) cb.disabled=true;
+  showFeedback(ok,ok?q.fb:'Answer: '+q.blank+'. '+q.fb);
   recordAnswer(ok);
 }
 
-function showFeedback(ok, text){
-  const fb = document.getElementById('feedbackBox');
-  fb.textContent = (ok?'✅ ':'❌ ') + text;
-  fb.className   = 'feedback-box show '+(ok?'correct':'wrong');
-  const nb = document.getElementById('nextBtn');
+function showFeedback(ok,text){
+  const fb=document.getElementById('feedbackBox');
+  fb.textContent=(ok?'✅ ':'❌ ')+text;
+  fb.className='feedback-box show '+(ok?'correct':'wrong');
+  const nb=document.getElementById('nextBtn');
   nb.classList.add('show');
   nb.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 
-function recordAnswer(ok){
-  if(ok) numCorrect++; else numWrong++;
-  updateStrip();
-}
+function recordAnswer(ok){if(ok) numCorrect++; else numWrong++; updateStrip();}
 
-// ═══════════════════════════════════════
-//  NEXT / RESULTS
-// ═══════════════════════════════════════
 function nextQuestion(){
   curIdx++;
-  if(curIdx >= curQs.length){
-    showResults();
-  } else {
-    renderQuestion();
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
+  if(curIdx>=curQs.length){showResults();}
+  else{renderQuestion();window.scrollTo({top:0,behavior:'smooth'});}
 }
 
 function showResults(){
   showPage('resultsPage');
-  const total= curQs.length;
-  const pct  = Math.round((numCorrect/total)*100);
+  const total=curQs.length;
+  const pct=Math.round((numCorrect/total)*100);
+  const pts=numCorrect*10;
+  const wrong=total-numCorrect;
+  const resPage=document.getElementById('resultsPage');
+  const cardClass='res-card '+(curSection==='a'?'res-a':curSection==='b'?'res-b':'res-ch');
 
-  const rc = document.getElementById('resCard');
-  rc.className = 'res-card '+(curSection==='a'?'res-a':curSection==='b'?'res-b':'res-ch');
+  if(pct>=70){
+    let trophy='🏆',title='',subtitle='';
+    if(pct===100){trophy='🏆';title='Spectacular Job!';subtitle='You are officially a certified Adjective Master!';}
+    else if(pct>=85){trophy='⭐';title='Excellent Work!';subtitle='You have a strong grasp of comparative & superlative adjectives!';}
+    else{trophy='🌟';title='Great Job!';subtitle='Well done — you passed the adjective quiz!';}
 
-  let emoji,title,msg;
-  if(pct===100)     {emoji='🏆';title='Perfect Score!';  msg='Amazing! You are a true Grammar Champion!';}
-  else if(pct>=80)  {emoji='🌟';title='Excellent Work!'; msg='Great job! You really know your adjectives!';}
-  else if(pct>=60)  {emoji='😊';title='Good Effort!';    msg="You're getting there! Review the rules and try again!";}
-  else              {emoji='💪';title='Keep Practising!';msg='Go back to the book, review the rules, and try again!';}
+    resPage.innerHTML=
+      '<div class="'+cardClass+'">' +
+        '<div class="stars-row">' +
+          '<span class="star" id="rs1">⭐</span>' +
+          '<span class="star" id="rs2">⭐</span>' +
+          '<span class="star" id="rs3">⭐</span>' +
+          '<span class="star" id="rs4">⭐</span>' +
+          '<span class="star" id="rs5">⭐</span>' +
+        '</div>' +
+        '<span class="res-emoji">'+trophy+'</span>' +
+        '<div class="res-title">'+title+'</div>' +
+        '<div class="res-subtitle">'+subtitle+'</div>' +
+        '<div class="score-pills">' +
+          '<div class="pill"><span class="pv">'+pts+'</span><span class="pl">Points</span></div>' +
+          '<div class="pill"><span class="pv">✅ '+numCorrect+'</span><span class="pl">Correct</span></div>' +
+          '<div class="pill"><span class="pv">❌ '+wrong+'</span><span class="pl">Wrong</span></div>' +
+          '<div class="pill"><span class="pv">'+pct+'%</span><span class="pl">Score</span></div>' +
+        '</div>' +
+        '<div class="res-btns">' +
+          '<button class="rbtn rbtn-retry" onclick="retryQuiz()">🔄 Try Again</button>' +
+          '<button class="rbtn rbtn-menu" onclick="goMenu()">🏠 Menu</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="review-box">' +
+        '<span class="review-badge">🔒 Notice: For Parents &amp; Educators</span>' +
+        '<div class="review-heading">How did you like this complete resource bundle?</div>' +
+        '<div class="review-body">Thank you for choosing <strong>Agarutan Print</strong>! We hope this combination of printable worksheets, the digital fillable PDF, and the interactive quiz bonus is helping to build your student skills.<br><br>If this resource bundle added value to your student learning experience, please take a brief moment to share your feedback on Etsy. Your review helps us continue creating high-quality learning assets!</div>' +
+        '<a href="https://www.etsy.com/your/purchases" target="_blank" class="review-btn">Review This Resource Bundle</a>' +
+      '</div>';
 
-  document.getElementById('resEmoji').textContent = emoji;
-  document.getElementById('resTitle').textContent = title;
-  document.getElementById('resScore').textContent = numCorrect+' / '+total;
-  document.getElementById('resPct').textContent   = pct+'% correct';
-  document.getElementById('resMsg').textContent   = msg;
+    [1,2,3,4,5].forEach((n,i)=>{
+      setTimeout(()=>{const s=document.getElementById('rs'+n);if(s)s.classList.add('pop');},200+i*160);
+    });
+
+  } else {
+    resPage.innerHTML=
+      '<div class="low-score-card">' +
+        '<span class="ls-emoji">📚</span>' +
+        '<h2>Keep Practising!</h2>' +
+        '<p>You scored <strong>'+pct+'%</strong> ('+numCorrect+'/'+total+'). Review the adjective rules and aim for 70% or higher — you can do it!</p>' +
+        '<div class="low-pills">' +
+          '<div class="low-pill"><span class="pv" style="color:#6c5ce7">'+pts+'</span><span class="pl">Points</span></div>' +
+          '<div class="low-pill"><span class="pv" style="color:#00b894">✅ '+numCorrect+'</span><span class="pl">Correct</span></div>' +
+          '<div class="low-pill"><span class="pv" style="color:#e17055">❌ '+wrong+'</span><span class="pl">Wrong</span></div>' +
+          '<div class="low-pill"><span class="pv" style="color:#f0932b">'+pct+'%</span><span class="pl">Score</span></div>' +
+        '</div>' +
+        '<div class="low-btns">' +
+          '<button class="rbtn rbtn-retry" onclick="retryQuiz()">🔄 Try Again</button>' +
+          '<button class="rbtn rbtn-menu" onclick="goMenu()">🏠 Menu</button>' +
+        '</div>' +
+      '</div>';
+  }
 }
 </script>
 </body>
